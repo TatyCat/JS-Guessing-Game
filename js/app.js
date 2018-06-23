@@ -6,16 +6,12 @@ const game = document.querySelector('#game'),
         maxNum = document.querySelector('.max-num'),
         guessBtn = document.querySelector('#guess-btn'),
         guessInput = document.querySelector('#guess-input'),
+        playAgain = document.querySelector('.playAgain'),
         message = document.querySelector('.message');
 
         minNum.textContent = min;
         maxNum.textContent = max;
-
-game.addEventListener('mousedown', function(e){
-    if(e.target.className === 'play-again'){
-        window.location.reload();
-    }
-});
+// event
 
 guessBtn.addEventListener('click', function(){
     let guess = parseInt(guessInput.value);
@@ -23,39 +19,52 @@ guessBtn.addEventListener('click', function(){
     if(isNaN(guess) || guess < min || guess > max){
         setGameMessage(`Please enter a number between ${min} and ${max}`, 'red'); 
     }else if(guess === winningNum){
-        gameOver(true, `The number ${winningNum} is correct! You Win!`);
-        
+        gameOver(`True that. The number ${winningNum} is correct, you Win!`);
+    
     }else{
         guessesLeft -=1;
         if (guessesLeft === 0){
-            gameOver(false, `Ha, game over. The correct number was ${winningNum}.`);
+            gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'hotpink');
         }else{
-            message.style.color = 'red';
             guessInput.style.borderColor = 'red';
             setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
         }
     }
+
 });      
-        
+    
+// if(document.getElementsByTagName('input').classList.contains()){
+//     guessBtn.addEventListener("click", function(){this.style.backgroundColor = "blue";});
+// }
+if(document.getElementsByClassName('button').classList.contains("button")){
+    guessInput.disabled = true;
+}
+
+
+
+
 function setGameMessage(msg, color){
-    message.style.color = color;
+    message.style.background = color;
     message.textContent = msg; 
 }
 
-function gameOver(won, msg){
+function gameOver(msg, color){
     guessInput.disabled = true;
-
-    let color; 
-    won === true ? color = 'green': color = 'red';
-    message.style.color = color;
+    // message.style.color = color;
     guessInput.style.borderColor = color;
 
-    setGameMessage(msg);
+    setGameMessage(msg, color);
 
     guessBtn.value = 'Play Again';
-    guessBtn.className += ' play-again';
+    guessBtn.classList.toggle("playAgain", true);
+
+
 }
 
 function randomWinningNumber(min, max){
     return (Math.floor(Math.random() * (max - min +1) + min));
 }
+
+
+//document.getElementsByTagName('input')
+  

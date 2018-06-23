@@ -1,110 +1,110 @@
-*{
-    text-decoration: none;
-}
+/* All Sections */
+    *{
+        text-decoration: none;
+    }
 
-body{
-    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
-    background-repeat: no-repeat;
-    height: 100%;
-    margin:0;
+    body{
+        background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+        background-repeat: no-repeat;
+        height: 100%;
+        margin:0;
 
-    text-align: center;
-    color: #fff;
-    font-family: 'Dosis', sans-serif;  
-}
-
-h1{
-    margin-top: 5%;
-    font-family: 'Cabin Sketch', cursive;
-    font-size: 5vw;
-    margin-bottom: 2%;
-}
-
-footer {
-    height: 10%;
-}
-
-article{
-    height: 85%;
-}
+        text-align: center;
+        color: #fff;
+        font-family: 'Dosis', sans-serif;  
+    }
 
 
-footer{
     
-    /* position: ; */
-    width:100%;
-    bottom:0;
-    left: 0;
-    right: 0;
-    background-color: #d8e1f499;
-    font-family: sans-serif;
-}
+/* Header Section */
+    h1{
+        margin-top: 5%;
+        font-family: 'Cabin Sketch', cursive;
+        font-size: 5vw;
+        margin-bottom: 2%;
+    }
 
-footer p{
-    /* max-height: .1vw; */
-    margin-top: 1em;
-    margin-bottom: 1em;
-    font-size: 2.3vh;
-    padding-top: .5vh; 
-    padding-bottom: .5vh; 
-}
 
-.instructions{
-    font-size: 3vw;
-}
 
-.button{
-    color: #fff;
-    background-color: #80f6f2b8;
-    font-size: 2vw;
-    font-weight: bold;
-    border-style: solid;
-    border-width: .5px;
-    border-color: lightgray;
-    display: inline-block;
-    padding: 8px 16px;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-    border-radius: 7px;
-    box-shadow:0 1px 10px
-}
+/* Main-Article Section */
+    .instructions{
+        font-size: 3vw;
+    }
 
-.inline p{
-    display: inline;
-}
-.inline{
-    margin-top: -2vh;
-}
+    .guessInput{
+        padding: 8px;
+        display: block;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        width: 25%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 3%;
+        margin-bottom: 1%;
+        border-radius: 7px;
+        text-align: center;
+        font-size: 2.5vw;
+        color: rgb(36, 35, 35);
+    }
 
-.white{
-    color: white !important;
-}
+    .button{
+        color: #fff;
+        background-color: #80f6f2b8;
+        font-size: 2vw;
+        font-weight: bold;
+        border-style: solid;
+        border-width: .5px;
+        border-color: lightgray;
+        display: inline-block;
+        padding: 8px 16px;
+        vertical-align: middle;
+        overflow: hidden;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        white-space: nowrap;
+        border-radius: 7px;
+        box-shadow:0 1px 10px
+    }    
 
-.socialMediaLinks, .socialMediaLinks a:visited{
-    color: white;
-    padding: 2vh; 
-}
 
-.donate, .donate a:visited{
-    color: rgb(86, 31, 132);
-}
 
-.guessInput{
-    padding: 8px;
-    display: block;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    width: 25%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 3%;
-    margin-bottom: 1%;
-    border-radius: 7px;
-    text-align: center;
-    font-size: 2.5vw;
-    color: rgb(36, 35, 35);
-}
+/* Footer Section */
+    footer{
+        width:100%;
+        height: 4vw;
+        background-color: black !important;
+        bottom:0;
+        left: 0;
+        right: 0;
+        background-color: #d8e1f499;
+        text-align: center;
+    }
+
+    footer p, footer a{
+        letter-spacing: .5ch;
+        font-size:  1.2vw;
+        /* font-size:  1ch; */
+        /* margin-top: 1em; */
+        /* margin-bottom: .3em; */
+        /* padding-top: .3em;  */
+        /* padding-bottom: 5px;  */
+    }
+
+    .inline p{
+        display: inline;
+    }
+    /* .inline{
+        
+    } */
+
+    .socialMediaLinks, .socialMediaLinks a:visited{
+        color: white;
+        padding: 2vh; 
+        margin-top: 1.5vh
+    }
+
+    .donate, .donate a:visited{
+        color: rgb(175, 46, 177);
+
+    }
