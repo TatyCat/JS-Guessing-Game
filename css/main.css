@@ -84,12 +84,12 @@ footer p{
     color: white !important;
 }
 
-.socialMediaLinks{
+.socialMediaLinks, .socialMediaLinks a:visited{
     color: white;
     padding: 2vh; 
 }
 
-.donate{
+.donate, .donate a:visited{
     color: rgb(86, 31, 132);
 }
 
