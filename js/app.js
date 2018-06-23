@@ -53,7 +53,7 @@ function gameOver(won, msg){
     setGameMessage(msg);
 
     guessBtn.value = 'Play Again';
-    guessBtn.className += 'play-again';
+    guessBtn.className += ' play-again';
 }
 
 function randomWinningNumber(min, max){
