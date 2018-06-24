@@ -23,7 +23,7 @@ guessBtn.addEventListener('click', function(){
         window.location.reload();
 
     }else if(guess === winningNum){
-        gameOver(`True that. The number ${winningNum} is correct, you Win!`, '#1fe089');
+        gameOver(`True that. The number ${winningNum} is correct, you win!`, '#1fe089');
     }else{
         guessesLeft -=1;
         if(guessesLeft > 0){
