@@ -13,13 +13,19 @@ const game = document.querySelector('#game'),
         maxNum.textContent = max;
 // event
 
+
+
 guessBtn.addEventListener('click', function(){
     let guess = parseInt(guessInput.value);
 
     if(isNaN(guess) || guess < min || guess > max){
         setGameMessage(`Please enter a number between ${min} and ${max}`, 'red'); 
+
+    }else if(guessBtn.classList.contains("playAgain")){
+        window.location.reload();
+        
     }else if(guess === winningNum){
-        gameOver(`True that. The number ${winningNum} is correct, you Win!`);
+        gameOver(`True that. The number ${winningNum} is correct, you Win!`, 'lightgreen');
     
     }else{
         guessesLeft -=1;
@@ -32,17 +38,32 @@ guessBtn.addEventListener('click', function(){
     }
 
 });      
+
+
+
+
+
+
+// guessBtn.addEventListener('click', function(){
+//     let guess = parseInt(guessInput.value);
+
+//     if(isNaN(guess) || guess < min || guess > max){
+//         setGameMessage(`Please enter a number between ${min} and ${max}`, 'red'); 
+//     }else if(guess === winningNum){
+//         gameOver(`True that. The number ${winningNum} is correct, you Win!`, 'lime');
     
-// if(document.getElementsByTagName('input').classList.contains()){
-//     guessBtn.addEventListener("click", function(){this.style.backgroundColor = "blue";});
-// }
-if(document.getElementsByClassName('button').classList.contains("button")){
-    guessInput.disabled = true;
-}
+//     }else{
+//         guessesLeft -=1;
+//         if (guessesLeft === 0){
+//             gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'black');
+//         }else{
+//             guessInput.style.borderColor = 'red';
+//             setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
+//         }
+//     }
 
-
-
-
+// });      
+    
 function setGameMessage(msg, color){
     message.style.background = color;
     message.textContent = msg; 
@@ -57,8 +78,6 @@ function gameOver(msg, color){
 
     guessBtn.value = 'Play Again';
     guessBtn.classList.toggle("playAgain", true);
-
-
 }
 
 function randomWinningNumber(min, max){
@@ -81,3 +100,14 @@ function randomWinningNumber(min, max){
 
 
 // #TODO Fix text size of banner on mobile. maybe a BR tag only on sm screen/mobile.
+
+// -----------------
+// if(document.getElementsByTagName('input').classList.contains()){
+//     guessBtn.addEventListener("click", function(){this.style.backgroundColor = "blue";});
+// }
+
+
+// if(document.getElementsByClassName('button').classList.contains("button")){
+//     guessInput.disabled = true;
+// }
+
