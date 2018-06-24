@@ -130,7 +130,7 @@
         
         .button{
             color: #fff;
-            background-color: #80f6f2b8;
+            background-color: #80f6f2;
             font-size: 1em;
             font-weight: bold;
             border-style: solid;
@@ -154,9 +154,9 @@
             background-color: #d8e1f499;
             text-align: center;
             position: fixed;
-            font-size:  1.5vw;  
-            padding-top: .2em;
-            padding-bottom: .2em;
+            font-size:  2.5vw;  
+            padding-top: .4em;
+            padding-bottom: .4em;
         }
     
         footer p, footer a{
