@@ -24,7 +24,7 @@ guessBtn.addEventListener('click', function(){
     }else{
         guessesLeft -=1;
         if (guessesLeft === 0){
-            gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'hotpink');
+            gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'black');
         }else{
             guessInput.style.borderColor = 'red';
             setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
@@ -50,7 +50,7 @@ function setGameMessage(msg, color){
 
 function gameOver(msg, color){
     guessInput.disabled = true;
-    // message.style.color = color;
+    // message.style.color = 'red';
     guessInput.style.borderColor = color;
 
     setGameMessage(msg, color);
@@ -65,6 +65,19 @@ function randomWinningNumber(min, max){
     return (Math.floor(Math.random() * (max - min +1) + min));
 }
 
-
-//document.getElementsByTagName('input')
   
+
+
+// user guesses a number
+// if the number is correct, 
+// tell the user you, you's right. big letters, bold celebratory color.
+
+// if user is wrong,
+// tell them that they are wrong, and subtract remaining guesses. leave red banner
+
+
+// if user runs out of chances or they guess correctly, game ends. 
+// game ender should block the button for submit & input, and refresh if they want to play playAgain. 
+
+
+// #TODO Fix text size of banner on mobile. maybe a BR tag only on sm screen/mobile.

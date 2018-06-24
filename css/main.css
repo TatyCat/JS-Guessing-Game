@@ -54,7 +54,6 @@
         width: 25%;
         margin-right: auto;
         margin-left: auto;
-        margin-top: 1%;
         margin-bottom: 1%;
         border-radius: 7px;
         text-align: center;
@@ -90,7 +89,11 @@
         -user-select: none; 
     }    
 
+    .message{
+        padding: 0.5% 0;
+    }
 
+    
 
 /* Footer Section */
     footer{
@@ -116,7 +119,7 @@
     }
 
     .purpleText, .purpleText a:visited{
-        color: rgb(164, 46, 177);
+        color: #ec577fd0;
     }
 
 
