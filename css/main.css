@@ -101,7 +101,7 @@
         width:100%;
         bottom:0;
         left: 0;
-        right: 0;
+        right: 0; 
         background-color: #d8e1f499;
         text-align: center;
         position: fixed;
@@ -119,10 +119,9 @@
         color: white;
     }
 
-    .purpleText, .purpleText a:visited{
+    .footerHotLinks, .footerHotLinks a:visited{
         color: #ec577fd0;
     }
-
 
 
 

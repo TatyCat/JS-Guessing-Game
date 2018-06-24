@@ -23,10 +23,10 @@ guessBtn.addEventListener('click', function(){
         window.location.reload();
 
     }else if(guess === winningNum){
-        gameOver(`True that. The number ${winningNum} is correct, you Win!`, 'lightgreen');
+        gameOver(`True that. The number ${winningNum} is correct, you Win!`, '#1fe089');
     }else{
+        guessesLeft -=1;
         if(guessesLeft > 0){
-            guessesLeft -=1;
             guessInput.style.borderColor = 'red';
                 setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
         }else if(guessesLeft === 0){
