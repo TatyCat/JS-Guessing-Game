@@ -11,62 +11,43 @@ const game = document.querySelector('#game'),
 
         minNum.textContent = min;
         maxNum.textContent = max;
-// event
-
 
 
 guessBtn.addEventListener('click', function(){
-    let guess = parseInt(guessInput.value);
+    var guess = parseInt(guessInput.value);
 
     if(isNaN(guess) || guess < min || guess > max){
         setGameMessage(`Please enter a number between ${min} and ${max}`, 'red'); 
 
     }else if(guessBtn.classList.contains("playAgain")){
         window.location.reload();
-        
+
     }else if(guess === winningNum){
         gameOver(`True that. The number ${winningNum} is correct, you Win!`, 'lightgreen');
-    
     }else{
-        guessesLeft -=1;
-        if (guessesLeft === 0){
-            gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'black');
-        }else{
+        if(guessesLeft > 0){
+            guessesLeft -=1;
             guessInput.style.borderColor = 'red';
-            setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
+                setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
+        }else if(guessesLeft === 0){
+            gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'black');
         }
     }
-
 });      
 
-
-
-
-
-
-// guessBtn.addEventListener('click', function(){
-//     let guess = parseInt(guessInput.value);
-
-//     if(isNaN(guess) || guess < min || guess > max){
-//         setGameMessage(`Please enter a number between ${min} and ${max}`, 'red'); 
-//     }else if(guess === winningNum){
-//         gameOver(`True that. The number ${winningNum} is correct, you Win!`, 'lime');
-    
-//     }else{
-//         guessesLeft -=1;
-//         if (guessesLeft === 0){
-//             gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'black');
-//         }else{
-//             guessInput.style.borderColor = 'red';
-//             setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
-//         }
-//     }
-
-// });      
-    
 function setGameMessage(msg, color){
     message.style.background = color;
     message.textContent = msg; 
+}
+
+function butDidIWin(){
+    if(guessesLeft > 0){
+        guessesLeft -=1;
+        guessInput.style.borderColor = 'red';
+            setGameMessage(`Oh no, ${guess} is not correct. ${guessesLeft} guesses are left.`, 'red');
+    }else if(guessesLeft === 0){
+        gameOver(`Ha, game over. The correct number was ${winningNum}.`, 'black');
+    }
 }
 
 function gameOver(msg, color){
@@ -83,31 +64,3 @@ function gameOver(msg, color){
 function randomWinningNumber(min, max){
     return (Math.floor(Math.random() * (max - min +1) + min));
 }
-
-  
-
-
-// user guesses a number
-// if the number is correct, 
-// tell the user you, you's right. big letters, bold celebratory color.
-
-// if user is wrong,
-// tell them that they are wrong, and subtract remaining guesses. leave red banner
-
-
-// if user runs out of chances or they guess correctly, game ends. 
-// game ender should block the button for submit & input, and refresh if they want to play playAgain. 
-
-
-// #TODO Fix text size of banner on mobile. maybe a BR tag only on sm screen/mobile.
-
-// -----------------
-// if(document.getElementsByTagName('input').classList.contains()){
-//     guessBtn.addEventListener("click", function(){this.style.backgroundColor = "blue";});
-// }
-
-
-// if(document.getElementsByClassName('button').classList.contains("button")){
-//     guessInput.disabled = true;
-// }
-
